@@ -1,42 +1,81 @@
 #root {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.switch-button {
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 20px; /* Adjusted border-radius for smaller size */
+    overflow: hidden;
+    width: 160px; /* Adjusted width for smaller size */
     text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #155fff;
+    position: relative;
+    padding-right: 80px; /* Adjusted padding-right for smaller size */
+    position: relative;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.switch-button:before {
+    content: "English";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 80px; /* Adjusted width for smaller size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+.switch-button-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
 }
 
-.card {
-    padding: 2em;
+.switch-button-checkbox:checked + .switch-button-label:before {
+    transform: translateX(80px); /* Adjusted translation for smaller size */
+    transition: transform 300ms linear;
 }
 
-.read-the-docs {
-    color: #888;
+.switch-button-label {
+    position: relative;
+    padding: 8px 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.switch-button-label:before {
+    content: "";
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 20px; /* Adjusted border-radius for smaller size */
+    transform: translateX(0);
+    transition: transform 300ms;
+}
+
+.switch-button-label-span {
+    position: relative;
 }

@@ -8,7 +8,10 @@ i18n.use(LanguageDetector)
     .use(initReactI18next)
     .init({
         debug: true,
-        fallbackLng: "en",
+        fallbackLng: "np",
+        detection: {
+            order: ["localStorage", "navigator"],
+        },
         resources: {
             en: {
                 home: homeTranslations.en,
